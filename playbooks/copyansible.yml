@@ -1,0 +1,9 @@
+---
+- hosts: servers
+  remote_user: ec2-user
+  
+  tasks:
+   - name: copy file remotely
+     copy: src=/home/ec2-user/inventory dest=/opt/inventory owner=root group=root mode=0644
+     sudo: yes
+

@@ -1,0 +1,12 @@
+---
+- hosts: servers
+  remote_user: ec2-user
+
+  vars:
+    - package_name: "httpdfalse"
+
+  tasks:
+    - include: /home/ec2-user/instal_apache.yml 
+    - name: Check apache service
+      service: name={{ package_name }} state=started
+      sudo: yes

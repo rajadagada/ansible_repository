@@ -1,0 +1,8 @@
+- hosts: servers 
+  tasks:
+  - name: Ansible Shell chdir and executable parameters 
+    shell: ls -lrt > temp.txt
+    sudo: yes 
+    args:
+      chdir: /opt 
+      executable: /bin/bash

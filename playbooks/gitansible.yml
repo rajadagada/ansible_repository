@@ -1,0 +1,13 @@
+---
+- hosts: servers
+  remote_user: ec2-user
+
+  tasks:
+    - name: Install GIT package_name
+      yum: name=git state=latest
+      sudo: yes
+      when: ansible_os_family == "RedHat"
+
+    - name: Checkout repo
+      git: repo=https://github.com/github/gitignore.git dest=/opt/gitignoreone
+      sudo: yes

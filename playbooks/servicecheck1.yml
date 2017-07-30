@@ -1,0 +1,10 @@
+---
+- hosts: servers
+  remote_user: ec2-user
+  vars_files:
+	- /home/ec2-user/var1.yml 
+
+  tasks:
+        - name: Check apache service
+          service: name={{ package_name }} state=started
+          sudo: yes

@@ -1,0 +1,8 @@
+---
+- hosts: servers
+  tasks:
+    - name: Ansible command module with chdir and executable parameters
+      command: ls -lrt
+      args:
+        chdir: /opt
+        executable: /bin/bash
